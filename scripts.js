@@ -11,7 +11,8 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    let humanChoice = prompt("Enter \"Rock\", \"Paper\", or \"Scissors\".").toLowerCase();
+    let humanChoice = 
+        prompt("Enter 'Rock', 'Paper', or 'Scissors'.").toLowerCase();
     humanChoice = humanChoice.at(0).toUpperCase() + humanChoice.slice(1);
     return humanChoice;
 }
@@ -53,7 +54,11 @@ function playGame() {
         let playerResult = didPlayerWin(humanChoice, computerChoice);
         switch (playerResult) {
             case "win":
-                console.log("You win! " + humanChoice + " beats " + computerChoice + ".");
+                console.log("You win! " + 
+                            humanChoice + 
+                            " beats " + 
+                            computerChoice + 
+                            ".");
                 humanScore++;
                 break;
             case "tie":
@@ -61,7 +66,11 @@ function playGame() {
                 ties++;
                 break;
             case "lose":
-                console.log("You lose! " + computerChoice + " beats " + humanChoice + ".");
+                console.log("You lose! " + 
+                            computerChoice + 
+                            " beats " + 
+                            humanChoice + 
+                            ".");
                 computerScore++;
                 break;
         }
@@ -75,7 +84,10 @@ function playGame() {
         let humanChoice = getHumanChoice();
         playRound(humanChoice, cpuChoice);
     }
-    console.log("You won " + humanScore + " game(s), the Computer won " + computerScore + " game(s), and " + ties + " game(s) ended in a tie.");
+    console.log("You won " + humanScore + 
+                " game(s), the Computer won " + computerScore + 
+                " game(s), and " + ties + 
+                " game(s) ended in a tie.");
 }
 
 playGame();
